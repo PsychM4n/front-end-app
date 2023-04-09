@@ -62,7 +62,7 @@ form button {
 header {
     background-color: rgba(252, 252, 252, 0.2);
     margin: auto -16px;
-    padding: 16px 32px;
+    padding: 8px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -72,8 +72,17 @@ header h1 {
     font-weight: 200;
 }
 
+
 header a {
     text-decoration: none;
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+    /* padding-right: 4rem; */
+}
+
+header button{
+    margin-left: 4rem;
 }
 
 footer {
@@ -86,4 +95,11 @@ footer {
 
 footer p {
     color: #ccc;
+}
+
+/* sizing of map container */
+.leaflet-container {
+    margin-top: 4rem;
+    height: 40vh;
+    width: 50vw;
 }

@@ -6,23 +6,16 @@ function Heading() {
     return (
         <header>
             <br />
-            <ul>
-                <li>
+            <div class="row">
+                <div class="col-md-6">
                     <Link to="/"><h1>Wildlife Conservation</h1></Link>
-                </li>
-                <li>
-
-                    <Link to="/login">Login</Link>
-                </li>
-                <li>
-
-                    <Link to="/Register">Register</Link>
-                </li>
-            </ul>
-
-            {/* <button onClick=>Register</button> */}
-
-
+                    {/* <button onClick=>Register</button> */}
+                </div>
+                <div class="col-md-6">
+                    <Link to="/login"><button class="btn btn-light">Login</button></Link>
+                    <Link to="/Register"><button class="btn btn-light">Register</button></Link>
+                </div>
+            </div>
         </header>
     );
 }

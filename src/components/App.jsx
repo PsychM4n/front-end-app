@@ -8,6 +8,7 @@ import {
     Route,
     Routes,
 } from "react-router-dom";
+import Track from "./Track";
 
 // var userIsRegistered = false;
 
@@ -24,8 +25,11 @@ function App() {
 
                     <Route path="/login" element={<Login />} />
 
+                    <Route path="/track" element={<Track />} />
+
                 </Routes>
             </Router>
+
 
         </div>
     );

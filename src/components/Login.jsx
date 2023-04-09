@@ -1,16 +1,20 @@
 import React from "react";
-import Form from "./Form";
+import Input from "./Input";
 import Heading from "./Header";
 import Footer from "./Footer";
 
-var userIsRegistered = false;
+// var userIsRegistered = false;
 
 function Login() {
     return (
         <div>
             <Heading />
             <div className="container">
-                <Form isRegistered={userIsRegistered} />
+                <form className="form">
+                    <Input type="text" placeholder="Username" />
+                    <Input type="password" placeholder="Password" />
+                    <button type="submit">Login</button>
+                </form>
             </div>
             <Footer></Footer>
         </div>
