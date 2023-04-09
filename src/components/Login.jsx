@@ -6,6 +6,14 @@ import Footer from "./Footer";
 // var userIsRegistered = false;
 
 function Login() {
+
+    const [colour, setColour] = React.useState(false);
+    function mouseOver() {
+        setColour(true);
+    }
+    function mouseOut() {
+        setColour(false);
+    }
     return (
         <div>
             <Heading />
@@ -13,7 +21,9 @@ function Login() {
                 <form className="form">
                     <Input type="text" placeholder="Username" />
                     <Input type="password" placeholder="Password" />
-                    <button type="submit">Login</button>
+                    <button style={{ backgroundColor: colour ? "black" : "white" }}
+                        onMouseOver={mouseOver}
+                        onMouseOut={mouseOut} type="submit">Login</button>
                 </form>
             </div>
             <Footer></Footer>
