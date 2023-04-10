@@ -1,18 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Heading from "./Header";
+import Footer from "./Footer";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, } from 'react-leaflet'
+import Loader from "./Loader";
+
 // import * as L from "leaflet";
 
 function Track() {
 
+    const [loading, setLoading] = useState(false)
 
-    return <div> <MapContainer center={[14.0860764, 100.6080406]} zoom={13}>
-        <TileLayer attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500)
+    }, [])
+
+    // const markers = [
+    //     {
+
+    //     },
+
+    // ]
+
+    return <div>
+        {
+            loading ? <Loader /> : <div><Heading />
+                <MapContainer center={[14.0860764, 100.6080406]} zoom={13}>
+                    <TileLayer attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
 
 
-    </MapContainer></div>
+                </MapContainer>
+                <Footer /></div>
+        }
+
+    </div>
+
 }
 
 export default Track

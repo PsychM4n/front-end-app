@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Input from "./Input";
-import Heading from "./Header";
-import Footer from "./Footer";
+import Loader from "./Loader";
+import { Link } from "react-router-dom";
+import background from "./animal.png"
+
+
 
 // var userIsRegistered = false;
 
@@ -14,19 +17,43 @@ function Login() {
     function mouseOut() {
         setColour(false);
     }
+
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500)
+    }, [])
+
     return (
-        <div>
-            <Heading />
-            <div className="container">
-                <form className="form">
-                    <Input type="text" placeholder="Username" />
-                    <Input type="password" placeholder="Password" />
-                    <button style={{ backgroundColor: colour ? "black" : "white" }}
-                        onMouseOver={mouseOver}
-                        onMouseOut={mouseOut} type="submit">Login</button>
-                </form>
-            </div>
-            <Footer></Footer>
+        <div style={{
+            backgroundImage: `url(${background})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+        }}>
+            {
+                loading ? <Loader /> : <div>
+                    <div className="container">
+                        <form className="form">
+                            <Input type="text" placeholder="Username" />
+                            <Input type="password" placeholder="Password" />
+
+                            <Link to="/home"><button style={{ backgroundColor: colour ? "black" : "white" }}
+                                onMouseOver={mouseOver}
+                                onMouseOut={mouseOut} type="submit">Login</button></Link>
+                        </form>
+                        <p>Not a user yet Contact Us @<a href="mailto:wildlifeconservation@gmail.com">here</a></p>
+                    </div>
+                </div>
+            }
+
         </div>
     );
 }

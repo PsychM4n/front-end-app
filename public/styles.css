@@ -5,13 +5,19 @@
     font-weight: 300;
 }
 
+/* 
+.root {
+    background-image: url("../src/images/animal.png");
+
+} */
+
 body {
     font-family: "Source Sans Pro", sans-serif;
     color: white;
+    width: 100vw;
+    height: 100vh;
     font-weight: 300;
-    background: #50a3a2;
-    width: 100%;
-    height: 100%;
+    /* background: #84c1cd; */
 }
 
 .container {
@@ -60,18 +66,27 @@ form button {
 }
 
 
-/* Header and Footer Styles */
+/* Header and Footer Styles rgb(252, 252, 252)*/
 header {
-    background-color: rgba(252, 252, 252, 0.2);
-    margin: auto -16px;
-    padding: 8px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    /* background-color: #84c1cdc5; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* text-align: center; */
+    /* justify-content: space-between; */
+    /* margin: auto -16px; */
+    padding: 16px 32px;
+    /* opacity: 1; */
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
 }
 
 header h1 {
-    color: #fff;
+    color: #ffffff;
     font-family: "McLaren", cursive;
     font-weight: 200;
+    margin-right: 45rem;
+
 }
 
 
@@ -83,9 +98,10 @@ header a {
     /* padding-right: 4rem; */
 }
 
-header button{
+header button {
     margin-left: 4rem;
 }
+
 
 footer {
     position: absolute;
@@ -102,6 +118,54 @@ footer p {
 /* sizing of map container */
 .leaflet-container {
     margin-top: 4rem;
+    margin-left: 2rem;
     height: 40vh;
     width: 50vw;
+}
+
+/* loader */
+.loader {
+    text-align: center;
+    /* background-color: #50a3a2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* landing page styles */
+
+.landing {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    color: #000000;
+    padding-bottom: 10rem;
+}
+
+.title {
+    font-size: 4rem;
+    font-family: "McLaren", cursive;
+    margin-bottom: 2rem;
+}
+
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.login-btn {
+    margin: 2rem;
+    padding: 0.5rem 2rem;
+    font-family: "McLaren", cursive;
 }
